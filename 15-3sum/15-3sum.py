@@ -2,12 +2,15 @@ class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
         n=len(nums)
-        my_set=set()
+        my_list=[]
 
 
         for i in range(n-2):
-            j=i+1
-            k=n-1
+
+            if i>0 and nums[i]==nums[i-1]:
+                continue
+            j = i + 1
+            k = n - 1
             while(j<k):
                 x=nums[i]+nums[j]+nums[k]
 
@@ -16,16 +19,10 @@ class Solution:
                 elif x<0:
                     j=j+1
                 else:
-                    my_set.add((nums[i], nums[j], nums[k]))
-                    j=j+1
+                    my_list.append((nums[i], nums[j], nums[k]))
+
                     k=k-1
-        m=len(my_set)
-        nums.clear()
-        for item in my_set:
+                    while j<k and nums[k]==nums[k+1]:
+                        k=k-1
 
-            nums.append(list(item))
-
-
-
-
-        return nums
+        return my_list
