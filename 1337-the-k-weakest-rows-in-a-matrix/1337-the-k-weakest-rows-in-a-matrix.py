@@ -17,6 +17,8 @@ class Solution:
             for j in range(m):
                 if mat[i][j]==1:
                     count+=1
+                else: 
+                    break
             arr.append(count)
         my_arr=my_enumerate(arr)
 
