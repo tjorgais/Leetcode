@@ -15,34 +15,19 @@ class Solution:
             while (j < k):
 
                 x=nums[i]+nums[j]+nums[k]
-                diff=x-target
-                abs_diff=abs(diff)
-                if abs_diff==0:
+                diff=abs(x-target)
+                
+                if diff==0:
                     final_sum=x
                     return final_sum
-                elif abs_diff<prev_diff:
-                    final_sum=x
-                    prev_diff=abs_diff
-                    if target>=0 and x<0:
-                        j+=1
-                    elif target<0 and x>=0:
-                        k-=1
-                    else:
-                        if diff>0:
-                            k-=1
-                        else:
-                            j+=1
-                else:
-                    if target >= 0 and x < 0:
-                        j += 1
-                    elif target < 0 and x >= 0:
-                        k -= 1
-                    else:
-                        if diff > 0:
-                            k -= 1
-                        else:
-                            j += 1
+                if diff < prev_diff:
+                    final_sum = x
+                    prev_diff = diff
 
+                if x > target:
+                    k -= 1
+                elif x < target:
+                    j += 1
 
 
         return final_sum
