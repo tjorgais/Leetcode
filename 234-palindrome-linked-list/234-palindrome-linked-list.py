@@ -11,7 +11,7 @@ class Solution:
             n+=1
             temp=temp.next
         n+=1
-        temp2=head
+        temp=head
         if n==1:
             return True
         else:
@@ -20,16 +20,16 @@ class Solution:
                 i=0
                 output1=''
                 while(i!=x):
-                    output1+=str(temp2.val)
-                    temp2=temp2.next
+                    output1+=str(temp.val)
+                    temp=temp.next
                     i+=1
-                output1+=str(temp2.val)
+                output1+=str(temp.val)
                 output1=output1[::-1]
                 output2=''
-                temp2=temp2.next
-                while(temp2!=None):
-                    output2+=str(temp2.val)
-                    temp2=temp2.next
+                temp=temp.next
+                while(temp!=None):
+                    output2+=str(temp.val)
+                    temp=temp.next
                 if output1==output2:
                     return True
             else:
@@ -37,16 +37,16 @@ class Solution:
                 i=0
                 output1=''
                 while(i!=x):
-                    output1+=str(temp2.val)
-                    temp2=temp2.next
+                    output1+=str(temp.val)
+                    temp=temp.next
                     i+=1
-                output1+=str(temp2.val)
+                output1+=str(temp.val)
                 output1=output1[::-1]
                 output2=''
-                temp2=temp2.next.next
-                while(temp2!=None):
-                    output2+=str(temp2.val)
-                    temp2=temp2.next
+                temp=temp.next.next
+                while(temp!=None):
+                    output2+=str(temp.val)
+                    temp=temp.next
                 print(output2)
                 if output1==output2:
                     return True
