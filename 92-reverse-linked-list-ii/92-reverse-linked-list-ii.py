@@ -4,21 +4,6 @@
 #         self.val = val
 #         self.next = next
 
-# def rev(head):
-  
-#     pre = None;
-#     curr = head;
-#     nex = curr.next;
-
-#     while (curr):
-#         curr.next = pre;
-#         pre = curr;
-#         curr = nex;
-#         nex = (curr.next) if curr else None
-     
-#     head = pre
-#     return head
-
 class Solution:
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         if left ==right:
