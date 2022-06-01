@@ -21,10 +21,10 @@ class Solution:
         if len(stack)!=0:
             while(len(stack)!=0):
                 func[stack.pop()]=-1
-        output=[None]*n
+        #output=[None]*n
         for i in range(n):
-            output[i]=func[(nums[i],i)]
-        return output
+            nums[i]=func[(nums[i],i)]
+        return nums
             
         
 
