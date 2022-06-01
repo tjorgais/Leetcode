@@ -21,9 +21,9 @@ class Solution:
         if len(stack)!=0:
             while(len(stack)!=0):
                 func[stack.pop()]=-1
-        #output=[None]*n
+        
         for i in range(n):
-            nums[i]=func[(nums[i],i)]
+            nums[i]=func[(nums[i],i)] #Using the same memory
         return nums
             
         
