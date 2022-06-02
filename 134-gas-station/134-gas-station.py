@@ -8,10 +8,8 @@ class Solution:
                 start=i+1
                 diff+=s
                 s=0
-
         if s+diff>=0:
             return start
-        
         else:
             return -1
         
