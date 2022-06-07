@@ -1,5 +1,21 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
+        n= len(height)
+        stack=[]
+        result=0
+        for current in range(n):
+            while(stack and height[current]>height[stack[-1]]):
+                prev=stack.pop()
+                if not stack:
+                    break
+                result+=(current-stack[-1]-1)*(min(height[current],height[stack[-1]])-height[prev])
+            stack.append(current)
+        return result
+            
+            
+        
+        ###*******Two Pointer Methond****
+        '''
         n=len(height)
         left_max=[]
         right_max=[]
@@ -19,5 +35,5 @@ class Solution:
             x=min(left_max[i],right_max[i])
             count+=(x-height[i])
         return count
-            
+        '''    
         
