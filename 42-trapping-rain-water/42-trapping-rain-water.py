@@ -1,5 +1,32 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
+        #******Two Pointer Approach*********
+        '''
+        n=len(height)
+        left_max=0
+        right_max=0
+        left=0
+        right=n-1
+        result=0
+        while left<right:
+            if height[left]<height[right]:
+                if height[left]>=left_max:
+                    max_left=height[left]
+                else:
+                    result+=(left_max-height[left])
+                left+=1
+            else:
+                if height[right]>=right_max:
+                    right_max=height[right]
+                else:
+                    result+=(right_max-height[right])
+                right-=1
+        return result
+        '''
+                    
+                    
+        ###************Stack Method************
+        
         n= len(height)
         stack=[]
         result=0
@@ -11,10 +38,11 @@ class Solution:
                 result+=(current-stack[-1]-1)*(min(height[current],height[stack[-1]])-height[prev])
             stack.append(current)
         return result
+        
             
             
         
-        ###*******Two Pointer Methond****
+        ###*******Order of N space method(DP)****
         '''
         n=len(height)
         left_max=[]
