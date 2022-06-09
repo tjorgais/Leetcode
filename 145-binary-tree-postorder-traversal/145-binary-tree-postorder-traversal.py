@@ -14,16 +14,13 @@ class Solution:
         recursivestack.append(root)
         while recursivestack:
             current=recursivestack.pop()
-            result.append(current)
+            result.append(current.val)
             if current.left:
                 recursivestack.append(current.left)
             if current.right:
                 recursivestack.append(current.right)
-        recursivestack.clear()
-        while result:
-            current=result.pop()
-            recursivestack.append(current.val)
-            
-        return recursivestack
+
+        result.reverse() 
+        return result
             
         
