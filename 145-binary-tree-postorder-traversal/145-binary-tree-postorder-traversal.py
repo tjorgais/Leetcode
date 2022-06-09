@@ -20,7 +20,7 @@ class Solution:
             if current.right:
                 recursivestack.append(current.right)
 
-        result.reverse() 
-        return result
+        
+        return result[::-1]
             
         
