@@ -8,7 +8,6 @@ class Solution:
     def countNodes(self, root: Optional[TreeNode]) -> int:
         if root==None:
             return 0
-        count_left=self.countNodes(root.left)
-        count_right=self.countNodes( root.right)
-        return count_left+count_right+1
+
+        return self.countNodes(root.left)+self.countNodes( root.right)+1
         
