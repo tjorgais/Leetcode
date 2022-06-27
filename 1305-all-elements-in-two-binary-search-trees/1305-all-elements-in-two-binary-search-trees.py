@@ -27,7 +27,7 @@ class Solution:
         n2=len(list2)
         i,j=0,0
         while(i!=n1 and j!=n2):
-            print(i,j)
+            #print(i,j)
             if list1[i]<list2[j]:
                 output.append(list1[i])
                 i+=1
