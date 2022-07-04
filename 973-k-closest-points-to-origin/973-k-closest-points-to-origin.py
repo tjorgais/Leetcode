@@ -10,12 +10,12 @@ class Solution:
             x=np.square(point[0])+np.square(point[1])
             func.append([x, point])
         func.sort()
-        output=[]
+        points.clear()
         while(k):
             x,y=heappop(func)
-            output.append(y)
+            points.append(y)
             k-=1
-        return output
+        return points
             
         
             
