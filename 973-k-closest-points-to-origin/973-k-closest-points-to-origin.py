@@ -7,7 +7,7 @@ class Solution:
         i=0
         heapq.heapify(func)
         for point in points:
-            x=np.linalg.norm(point)
+            x=np.square(point[0])+np.square(point[1])
             func.append([x, point])
         func.sort()
         points.clear()
