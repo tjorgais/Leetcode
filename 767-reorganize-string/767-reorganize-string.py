@@ -21,4 +21,5 @@ class Solution:
                 heappush(heap,[prev_freq,prev_char ])
             prev_freq=freq+1
             prev_char=c
+        
         return ''.join(output)
