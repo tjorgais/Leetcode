@@ -28,7 +28,10 @@ class Solution:
                 j=j+1
                 i+=1
                 if j==m:
+                    #print('found at i-j')
+                    # j=lps[j-1]
                     return i-j
+                
             else:
                 if j!=0:
                     
