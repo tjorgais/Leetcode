@@ -1,5 +1,6 @@
 class Solution:
     def findMinArrowShots(self, points: List[List[int]]) -> int:
+        #Time complexity O(nlogn)(sorting + iteration over the points)
         n=len(points)
         if n==1:
             return 1
