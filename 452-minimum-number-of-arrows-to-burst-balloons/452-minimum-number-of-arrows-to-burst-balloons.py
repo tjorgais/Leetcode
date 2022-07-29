@@ -6,7 +6,7 @@ class Solution:
         i,j=0,1
         points=sorted(points, key=lambda x:x[0])
         #print(points)
-        output=[]
+        count=0
         while(i<n-1):
             x=max(points[i][0], points[j][0])
             y=min(points[i][1], points[j][1])
@@ -17,25 +17,25 @@ class Solution:
                         x=max(x, points[j][0])
                         y=min(y,points[j][1])
                     else:
-                        output.append([x,y])
+                        count+=1
                         break
                     j+=1
                 else:
-                    output.append([x,y])
+                    count+=1
                     break
                 if j==n-1:
-                    output.append([points[j][0],points[j][1]])
+                    count+=1
                     break
                 i=j
                 j=i+1
             else:
-                output.append([points[i][0],points[i][1]])
+                count+=1
                 if j==n-1:
-                    output.append([points[j][0],points[j][1]])
+                    count+=1
                     break
                 i=j
                 j=i+1
-        count=len(output)
+        #count=len(output)
         #print(output)
         return count
                 
