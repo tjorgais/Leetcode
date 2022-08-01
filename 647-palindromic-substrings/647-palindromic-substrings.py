@@ -25,7 +25,7 @@ class Solution:
             for i in range(n-ls+1):
                 j=i+ls-1
                 if ls==2:
-                    print(i,j)
+                    #print(i,j)
                     if s[i]!=s[j]:
                         LS[i][j]=[2,0]
                     else:
