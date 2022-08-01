@@ -41,7 +41,7 @@ class Solution:
     def countSubstrings(self, s: str) -> int:
         
         n=len(s)
-        LS=[[[0,0] for j in range(n)] for i in range(n)]
+        LS=[[[0,0] for j in range(n)] for i in range(n)]  #each window contain two entries first one is count of palindrome and second one is if the LS[i+1][j-1] is palindrome or not
         return self.count_palindrome(s, LS, n)
 
                 
