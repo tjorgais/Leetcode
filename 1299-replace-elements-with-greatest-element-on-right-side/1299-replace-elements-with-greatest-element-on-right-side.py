@@ -1,5 +1,6 @@
 class Solution(object):
     def replaceElements(self, arr):
+        '''
         n=len(arr)
         max_ele=0
         
@@ -16,6 +17,20 @@ class Solution(object):
                 else:
                     arr[n-i-1]=max_ele
         return arr
+        '''
+        n=len(arr)
+        max_ele=-1
+        for i in range(n-1, -1, -1):
+            new_max=0
+            if arr[i]>max_ele:
+                new_max=arr[i]
+            arr[i]=max_ele
+            if new_max>max_ele:
+                max_ele=new_max
+        return arr
+            
+
+        
                     
                 
                 
